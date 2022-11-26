@@ -169,7 +169,7 @@ public class DanhSachNhanSu {
         // Nếu nhân viên đưa vào là null
         if(nVien == null){
             if(!xuatDSMaTenDePhanBo(true)){
-                System.out.println("Không có nhân viên nào trong dạnh sách");
+                System.out.println("Không có nhân viên nào trong danh sách");
                 return;
             }
             nVien = (NhanVien) timNSTheoMaDePhanBo(scan,true);
@@ -177,7 +177,7 @@ public class DanhSachNhanSu {
         // Nếu trưởng phòng đưa vào là null
         if(trPhong == null){
             if(!xuatDSMaTenDePhanBo(false)){
-                System.out.println("Không có trưởng phòng nào trong dạnh sách");
+                System.out.println("Không có trưởng phòng nào trong danh sách");
                 return;
             }
             trPhong = (TruongPhong) timNSTheoMaDePhanBo(scan,false);
@@ -346,6 +346,7 @@ public class DanhSachNhanSu {
     }
 
     public void tinhXuatThuNhapGD(long doanhThuCTy){
+        boolean dSTrong = true;
         String pattern = "$###,###.##";
         DecimalFormat dcf = new DecimalFormat(pattern);
 
@@ -357,8 +358,10 @@ public class DanhSachNhanSu {
         for(NhanSu nSu : this.listNhanSu){
             if(nSu instanceof GiamDoc){
                 ((GiamDoc)nSu).tinhXuatThuNhap(loiNhuanCTY);
+                dSTrong = false;
             }
         }
+        if(dSTrong) System.out.println("Không có giám đốc nào trong danh sách");
     }
 
     public void taiDummyData(){
