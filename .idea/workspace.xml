@@ -4,10 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="05944850-db70-4952-a85d-f7c41bf9bbe2" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/DanhSachNhanSu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DanhSachNhanSu.java" afterDir="false" />
-    </list>
+    <list default="true" id="05944850-db70-4952-a85d-f7c41bf9bbe2" name="Changes" comment="Update xử lý khi không có giám đốc" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -27,7 +24,9 @@
     <option name="stateVersion" value="1" />
   </component>
   <component name="ProjectId" id="2I4ggOjpghRKy4MPseIvqz3BbQz" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <OptionsSetting value="false" id="Update" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -48,6 +47,14 @@
       <option name="presentableId" value="Default" />
       <updated>1669446379338</updated>
     </task>
+    <task id="LOCAL-00001" summary="Update xử lý khi không có giám đốc">
+      <created>1669482856181</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1669482856181</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -60,6 +67,10 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Update xử lý khi không có giám đốc" />
+    <option name="LAST_COMMIT_MESSAGE" value="Update xử lý khi không có giám đốc" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/Java20_BaiTap2_OOP_061222$XuLy.ic" NAME="XuLy Coverage Results" MODIFIED="1669475653682" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
