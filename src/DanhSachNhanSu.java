@@ -36,49 +36,56 @@ public class DanhSachNhanSu {
     }
 
     // 4. Input, output
-    public void themNhanSu(Scanner scan){
-        NhanSu nhanSu;
-        byte chon;
+    public void themNhanSu(Scanner scan, int option){
+        NhanSu nhanSu = null;
         byte phanBo;
-        do{
-            System.out.print("Nhân sự bạn muốn thêm là (1.Giám đốc, 2.Trưởng phòng, 3.Nhân viên, 4.Thoát): ");
-            chon = Byte.parseByte(scan.nextLine());
-            switch (chon){
-                case 1:
-                    nhanSu = new GiamDoc();
-                    nhanSu.nhap(scan,this.listNhanSu);
-                    this.listNhanSu.add(nhanSu);
-                    break;
-                case 2:
-                    nhanSu = new TruongPhong();
-                    nhanSu.nhap(scan,this.listNhanSu);
-                    this.listNhanSu.add(nhanSu);
-                    do{
-                        System.out.print("Nhấn 1 nếu muốn chọn nhân viên dưới quyền, 2 để thoát: ");
-                        phanBo = Byte.parseByte(scan.nextLine());
-                        if(phanBo == 1) phanBoNVVaoTP(scan,null,(TruongPhong) nhanSu);
-                    } while(phanBo != 2);
-                    break;
-                case 3:
-                    nhanSu = new NhanVien();
-                    nhanSu.nhap(scan,this.listNhanSu);
-                    this.listNhanSu.add(nhanSu);
-                    do{
-                        System.out.print("Nhấn 1 nếu muốn phân bổ vào trường phòng, 2 để thoát: ");
-                        phanBo = Byte.parseByte(scan.nextLine());
-                        if(phanBo == 1) phanBoNVVaoTP(scan,(NhanVien) nhanSu,null);
-                    } while(phanBo != 1 && phanBo != 2);
-                    break;
-                case 4:
-                    break;
-                default:
-                    System.out.println("Vui lòng chỉ chọn từ 1 đến 4");
-                    break;
-            }
-        } while(chon != 4);
-        System.out.println("Thêm thành công");
+        switch (option){
+            case 1:
+                nhanSu = nhapThemNhanSu(scan,option);
+                break;
+            case 2:
+                nhanSu = nhapThemNhanSu(scan,option);
+                do{
+                    System.out.print("Nhấn 1 nếu muốn chọn nhân viên dưới quyền, 2 để thoát: ");
+                    phanBo = Byte.parseByte(scan.nextLine());
+                    if(phanBo == 1) phanBoNVVaoTP(scan,null,(TruongPhong) nhanSu);
+                } while(phanBo != 2);
+                break;
+            case 3:
+                nhanSu = nhapThemNhanSu(scan,option);
+                do{
+                    System.out.print("Nhấn 1 nếu muốn phân bổ vào trường phòng, 2 để thoát: ");
+                    phanBo = Byte.parseByte(scan.nextLine());
+                    if(phanBo == 1) phanBoNVVaoTP(scan,(NhanVien) nhanSu,null);
+                } while(phanBo != 1 && phanBo != 2);
+                break;
+            case 4:
+                break;
+            default:
+                System.out.println("Vui lòng chỉ chọn từ 1 đến 4");
+                break;
+        }
     }
 
+    private NhanSu nhapThemNhanSu(Scanner scan,int option){
+        NhanSu nhanSu = null;
+        switch (option){
+            case 1:
+                nhanSu = new GiamDoc();
+                break;
+            case 2:
+                nhanSu = new TruongPhong();
+                break;
+            case 3:
+                nhanSu = new NhanVien();
+                break;
+        }
+        nhanSu.nhap(scan,this.listNhanSu);
+        this.listNhanSu.add(nhanSu);
+        System.out.println("Thêm thành công");
+
+        return nhanSu;
+    }
     public void xoaNhanSu(Scanner scan){
         NhanSu nhanSu;
         if(!xuatDSMaTenNS()){
@@ -133,7 +140,7 @@ public class DanhSachNhanSu {
         NhanSu nhanSu = null;
         String nhapMaSo;
         do{
-            System.out.print("Nhập mã số của nhân viên muốn phân bố: ");
+            System.out.print("Nhập mã số của nhân sự muốn xóa: ");
             nhapMaSo = scan.nextLine();
             for(NhanSu nSu : this.listNhanSu){
                 if(nSu.getMaSo().equalsIgnoreCase(nhapMaSo)){

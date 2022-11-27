@@ -86,11 +86,24 @@ public class CongTy {
 
     // 5. Businesses
     public void themNhanSu(Scanner scan){
-        this.objDSNhanSu.themNhanSu(scan);
+        byte chon;
+        do{
+            System.out.print("Nhân sự bạn muốn thêm là (1.Giám đốc, 2.Trưởng phòng, 3.Nhân viên, 4.Thoát): ");
+            chon = Byte.parseByte(scan.nextLine());
+            this.objDSNhanSu.themNhanSu(scan,chon);
+        } while(chon != 4);
     }
 
     public void xoaNhanSu(Scanner scan){
-        this.objDSNhanSu.xoaNhanSu(scan);
+        byte chon;
+        do{
+            System.out.print("Nhấp 1 để tiếp tục, 2 để thoát: ");
+            chon = Byte.parseByte(scan.nextLine());
+            if(chon == 1){
+                this.objDSNhanSu.xoaNhanSu(scan);
+            }
+        } while(chon != 2);
+
     }
 
     public void tinhTongLuongCTy(){
@@ -106,7 +119,6 @@ public class CongTy {
                 this.objDSNhanSu.phanBoNVVaoTP(scan,null,null);
             }
         } while(chon != 2);
-
     }
 
     public void timNVLuongCaoNhat(){
