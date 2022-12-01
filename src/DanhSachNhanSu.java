@@ -254,7 +254,7 @@ public class DanhSachNhanSu {
     }
 
     public void timNVLuongCaoNhat(){
-        NhanSu nhanSu = new NhanSu();
+        NhanSu nhanSu = null;
         float luongMax = -1;
 
         for(NhanSu nSu : this.listNhanSu){
@@ -276,7 +276,7 @@ public class DanhSachNhanSu {
     }
 
     public void timTPCoNVNhieuNhat(){
-        NhanSu nhanSu = new NhanSu();
+        NhanSu nhanSu = null;
         int soLuongNV = -1;
 
         for(NhanSu nSu : this.listNhanSu){
@@ -298,7 +298,7 @@ public class DanhSachNhanSu {
     }
 
     public void timGDCoCPhanNhieuNhat(){
-        NhanSu nhanSu = new NhanSu();
+        NhanSu nhanSu = null;
         float cpMax = -1;
 
         for(NhanSu nSu : this.listNhanSu){

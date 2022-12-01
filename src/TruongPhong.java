@@ -8,7 +8,7 @@ import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public class TruongPhong extends NhanSu {
+public class TruongPhong extends NhanSu implements TangGiamSoLuongNhanVien{
     // 1. Attributes
     final private int LUONG_NGAY = 200;
     final private byte LUONG_PHU_CAP = 100;
@@ -54,7 +54,6 @@ public class TruongPhong extends NhanSu {
     // 5. Businesses
     @Override
     public void tinhLuong() {
-        super.tinhLuong();
         this.luongThang = this.soNgayLV * this.LUONG_NGAY + this.soLuongNV * this.LUONG_PHU_CAP;
     }
 

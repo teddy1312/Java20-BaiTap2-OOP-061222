@@ -68,7 +68,6 @@ public class GiamDoc extends NhanSu{
     // 5. Businesses
     @Override
     public void tinhLuong() {
-        super.tinhLuong();
         this.luongThang = this.soNgayLV * this.LUONG_NGAY;
     }
 

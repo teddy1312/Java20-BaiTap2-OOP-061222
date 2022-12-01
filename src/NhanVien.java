@@ -62,7 +62,6 @@ public class NhanVien extends NhanSu{
     // 5. Businesses
     @Override
     public void tinhLuong() {
-        super.tinhLuong();
         this.luongThang = this.soNgayLV * this.LUONG_NGAY;
     }
 
@@ -80,4 +79,5 @@ public class NhanVien extends NhanSu{
 
         System.out.println(row);
     }
+
 }

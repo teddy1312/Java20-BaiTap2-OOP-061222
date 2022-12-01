@@ -7,7 +7,7 @@
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public class NhanSu {
+abstract class NhanSu{
     // 1. Attributes
     protected String maSo;
     protected String hoTen;
@@ -108,9 +108,7 @@ public class NhanSu {
     }
 
     // 5. Businesses
-    public void tinhLuong(){
-        this.luongThang = 0;
-    }
+    public abstract void tinhLuong();
 
     public void xuatMaVaTen(){
         String row = "";
@@ -119,4 +117,5 @@ public class NhanSu {
 
         System.out.print(row);
     }
+
 }
